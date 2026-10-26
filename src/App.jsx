@@ -1,53 +1,27 @@
-import SelfForm from "./Components/SelfForm";
-
-import { useState } from "react";
+// import LoginStatus from "./Components/LoginStatus";
+// import ProductTest from "./Components/ProductTest";
+// import SelfForm from "./Components/SelfForm";
+import ProductList from "./Components/ProductList";
 
 function App() {
-  // Store the password text
-  const [password, setPassword] = useState("");
-
-  // Track whether the password is visible
-  const [showPassword, setShowPassword] = useState(false);
-
-  // Update the password when the user types
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
-
-  // Toggle password visibility
-  const handleToggle = () => {
-    setShowPassword(!showPassword);
-  };
-
   return (
     <>
-      <h1>Login Form</h1>
-
       <div>
-        <label htmlFor="username">Enter Username</label>
-        <input id="username" type="text" />
-      </div>
+        {/* <SelfForm/> */}
+        {/* <ProductTest/> */}
+        {/* <LoginStatus/> */}
+        <ProductList/>
 
-      <div>
-        <label htmlFor="password">Enter Password</label>
-
-        <input
-          id="password"
-          type={showPassword ? "text" : "password"}
-          value={password}
-          onChange={handlePasswordChange}
-        />
-
-        <button type="button" onClick={handleToggle}>
-          {showPassword ? "Hide Password" : "Show Password"}
-        </button>
-      </div>
-      <br />
-      <div>
-        <SelfForm/>
       </div>
     </>
   );
 }
 
 export default App;
+
+// Requirements:
+// 1. Keep the same three products.
+// 2. Create a new array containing only products priced below ₹2,000.
+// 3. Use filter() to select those products.
+// 4. Use map() to display the filtered products.
+// 5. Display the heading Products Under ₹2000.
